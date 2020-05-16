@@ -10285,26 +10285,26 @@ static ssize_t audio_debug_proc_read(struct file *filp, char __user *buff, size_
         //if (g_DebugMode)
         //        sprintf(messages, "audio debug mode\n");
         //else {
-                switch (g_tavil_priv->mbhc->wcd_mbhc.current_plug) {
-                case MBHC_PLUG_TYPE_HEADSET:
-                        sprintf(messages, "1\n");
-                        break;
-                case MBHC_PLUG_TYPE_HEADPHONE:
-                        sprintf(messages, "2\n");
-                        break;
-                case MBHC_PLUG_TYPE_HIGH_HPH:
-                        sprintf(messages, "3\n");
-                        break;
-                case MBHC_PLUG_TYPE_GND_MIC_SWAP:
-                        sprintf(messages, "4\n");
-                        break;
-                case MBHC_PLUG_TYPE_ANC_HEADPHONE:
-                        sprintf(messages, "5\n");
-                        break;
-                default:
-                        sprintf(messages, "0\n");
-                        break;
-                }
+        switch (g_tavil_priv->mbhc->wcd_mbhc.current_plug) {
+        case MBHC_PLUG_TYPE_HEADSET:
+                sprintf(messages, "1\n");
+                break;
+        case MBHC_PLUG_TYPE_HEADPHONE:
+                sprintf(messages, "2\n");
+                break;
+        case MBHC_PLUG_TYPE_HIGH_HPH:
+                sprintf(messages, "3\n");
+                break;
+        case MBHC_PLUG_TYPE_GND_MIC_SWAP:
+                sprintf(messages, "4\n");
+                break;
+        case MBHC_PLUG_TYPE_ANC_HEADPHONE:
+                sprintf(messages, "5\n");
+                break;
+        default:
+                sprintf(messages, "0\n");
+                break;
+        }
         //}
 
         if (copy_to_user(buff, messages, len))
